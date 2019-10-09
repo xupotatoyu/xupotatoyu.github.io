@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>session，cookies和Token | 徐怀宇的blog</title>
+    <meta name="description" content="天道酬勤，日积月累(博客还在手动搬迁中)">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.0d9c2ad8.css" as="style"><link rel="preload" href="/assets/js/app.0b9391d3.js" as="script"><link rel="preload" href="/assets/js/2.7f3a429d.js" as="script"><link rel="preload" href="/assets/js/25.24a36361.js" as="script"><link rel="prefetch" href="/assets/js/10.fdaf1ad8.js"><link rel="prefetch" href="/assets/js/11.576f4e4c.js"><link rel="prefetch" href="/assets/js/12.fcaace63.js"><link rel="prefetch" href="/assets/js/13.d27c8a67.js"><link rel="prefetch" href="/assets/js/14.71b0b488.js"><link rel="prefetch" href="/assets/js/15.aedc0fd7.js"><link rel="prefetch" href="/assets/js/16.045d8ff7.js"><link rel="prefetch" href="/assets/js/17.359a7edd.js"><link rel="prefetch" href="/assets/js/18.d99c00f7.js"><link rel="prefetch" href="/assets/js/19.a225547e.js"><link rel="prefetch" href="/assets/js/20.a8e8a421.js"><link rel="prefetch" href="/assets/js/21.dd5561aa.js"><link rel="prefetch" href="/assets/js/22.98d27e4c.js"><link rel="prefetch" href="/assets/js/23.58001baa.js"><link rel="prefetch" href="/assets/js/24.27201c3e.js"><link rel="prefetch" href="/assets/js/26.29294ee1.js"><link rel="prefetch" href="/assets/js/27.2ddb56f3.js"><link rel="prefetch" href="/assets/js/28.8cb51f2f.js"><link rel="prefetch" href="/assets/js/3.b7359523.js"><link rel="prefetch" href="/assets/js/4.8c95ed9e.js"><link rel="prefetch" href="/assets/js/5.0c41f00d.js"><link rel="prefetch" href="/assets/js/6.3b3dff9c.js"><link rel="prefetch" href="/assets/js/7.eafc6530.js"><link rel="prefetch" href="/assets/js/8.26b147c1.js"><link rel="prefetch" href="/assets/js/9.b10d4f4c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d9c2ad8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">徐怀宇的blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/article/" class="nav-link router-link-active">文章目录</a></div><div class="nav-item"><a href="/DataStructure/" class="nav-link">数据结构与算法</a></div><div class="nav-item"><a href="https://blog.csdn.net/weixin_42257329" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xupotatoyu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/article/" class="nav-link router-link-active">文章目录</a></div><div class="nav-item"><a href="/DataStructure/" class="nav-link">数据结构与算法</a></div><div class="nav-item"><a href="https://blog.csdn.net/weixin_42257329" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xupotatoyu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/article/" class="sidebar-link">文章目录</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML-CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>浏览器与网络</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/article/浏览器与网络/TCPIP、HTTP、HTTPS基础知识点.html" class="sidebar-link">TCPIP、HTTP、HTTPS基础知识点</a></li><li><a href="/article/浏览器与网络/网络协议 7层 5层 4层.html" class="sidebar-link">网络协议 7层 5层 4层</a></li><li><a href="/article/浏览器与网络/跨域问题.html" class="sidebar-link">跨域问题</a></li><li><a href="/article/浏览器与网络/ajax.html" class="sidebar-link">ajax</a></li><li><a href="/article/浏览器与网络/session，cookies和Token.html" class="active sidebar-link">session，cookies和Token</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/article/浏览器与网络/session，cookies和Token.html#理解cookie（headers）" class="sidebar-link">理解Cookie（headers）</a></li><li class="sidebar-sub-header"><a href="/article/浏览器与网络/session，cookies和Token.html#浏览器（client端）操作cookie" class="sidebar-link">浏览器（Client端）操作cookie</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/article/浏览器与网络/session，cookies和Token.html#server端操作cookie" class="sidebar-link">server端操作cookie</a></li></ul></li><li class="sidebar-sub-header"><a href="/article/浏览器与网络/session，cookies和Token.html#理解session" class="sidebar-link">理解session</a></li><li class="sidebar-sub-header"><a href="/article/浏览器与网络/session，cookies和Token.html#token" class="sidebar-link">Token</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端工程化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS组件库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>后端</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>首先理清cookie和session。因为我的博客有登录功能所以用到了cookie，但是因为cookie并不安全，业内的统一解决方案是引入session</p> <h2 id="理解cookie（headers）"><a href="#理解cookie（headers）" aria-hidden="true" class="header-anchor">#</a> 理解Cookie（headers）</h2> <p>cookie是存储在浏览器的一串字符串 (最大5kb)
+cookie有跨域不共享的特性，浏览器为每个域名分别存储一段域名
+cookie的格式如 K1-v1;K2=v2;K3=v3; 因此可以存储结构化数据</p> <p>每次发送http请求，会将请求域的cookie一起发送给server
+server端可以修改cookie并返回给浏览器
+浏览器（Client）也可以通过javaScrip修改cookie（有限制，可以在server端进行限制）</p> <p>如下图
+<img src="https://img-blog.csdnimg.cn/20190530135759613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjI1NzMyOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <h2 id="浏览器（client端）操作cookie"><a href="#浏览器（client端）操作cookie" aria-hidden="true" class="header-anchor">#</a> 浏览器（Client端）操作cookie</h2> <p>以chrome为例
+<strong>查看cookie</strong><br>
+未解析的：network  &gt; ALL &gt; headers   <strong>responseheaders</strong> <strong>requestheaders</strong>
+解析后的：Application &gt; Storage &gt; Cookies <strong>Name</strong> cookie的名字，Value：cookie的值，Domain：cookie生效的域名，path：cookie生效的路径，expires：cookie的有效期，size：cookie的大小</p> <p><strong>用js修改cookie 在浏览器控制台中，Console中</strong>
+查看cookies：document.cookie
+累加cookies：document.cookie='K2=v1'
+并不能修改删除，只能累加</p> <h3 id="server端操作cookie"><a href="#server端操作cookie" aria-hidden="true" class="header-anchor">#</a> server端操作cookie</h3> <p>查看cookie
+修改cookie
+两者就可以实现登录验证</p> <p><strong>解析cookie</strong></p> <div class="language- extra-class"><pre class="language-text"><code>//解析cookies
+    req.cookie = {} //定义一个req.cookies为空值
+    const cookieStr = req.headers.cookie || ''
+    cookieStr.split(';').forEach(item =&gt; { //通过分号拆分数组，并进行遍历
+        if(!item) { //如果item的值不存在
+            return //return结束，return是终止符
+        }
+        const arr = item.split('=') //通过等号把K1=V1拆分成数组
+        const key = arr[0].trim() //key是等号前面那个值
+        const val = arr[1].trim() //val是等号后面那个值
+        req.cookie[key] = val  //把key的值赋值为val
+    })
+    console.log('req.cookie is',req.cookie)  // {name:lisi}
+</code></pre></div><p><strong>操作cookie</strong></p> <div class="language- extra-class"><pre class="language-text"><code>res.setHeader('set-Cookie',`userid=${userId};path=/;httpOnly;expires=${getCookieExpires()}`)
+//path=/：设置生效路径为根目录
+//httpOnly: 设置只允许后端修改
+//expires=:设置生效时间期限
+</code></pre></div><p>.
+.</p> <h2 id="理解session"><a href="#理解session" aria-hidden="true" class="header-anchor">#</a> 理解session</h2> <p>sesion可以弥补cookie的缺陷
+单纯cookie的缺陷</p> <blockquote><p>会暴露信息（如用户名，登录密码） 非常危险</p></blockquote> <p>解决办法：</p> <blockquote><p>server端的session存储用户信息，cookie只存储userid来到session中取用
+如cookie 》userid， server》username</p></blockquote> <p><img src="https://img-blog.csdnimg.cn/20190530144643951.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjI1NzMyOQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p> <pre><code> //设置sesson空对象
+ const SESSION_DATA= {}
+ //解析session
+ let needSetCookie = false //默认判断需要验证
+ let userId = req.cookie.userid
+ if(userId){
+     if(!SESSION_DATA[userId]) {//如果SESSION_DATA没有这个userid就初始化一个对象
+         SESSION_DATA[userId] = {}
+     }
+     } else{
+        needSetCookie = true
+         userId= `${Date.now()}_${Math.random()}`
+         SESSION_DATA[userId] = {}
+     }
+     req.session = SESSION_DATA[userId]`
+</code></pre> <h2 id="token"><a href="#token" aria-hidden="true" class="header-anchor">#</a> Token</h2> <blockquote><p>token一种新机制 因为cookie对于每个用户都需要在服务器端新建一个session 然后消耗大 反正很多坏处
+token就是把信息保存在用户端
+第一次登陆后服务器把用户信息通过特定算法加密生成一个token 然后结合用户信息和生成的信息统一返回给用户 用户存储 下次用户访问带上这个token 然后服务器只是需要把token里面的签名用算法解密,确认token里面的用户信息是否符合。 符合的就返回相应信息 并且继续返回token token过期之后服务器刷新一下啥的就行</p></blockquote> <p>大致整理了一下，后续可能还会再丰富修改</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/article/浏览器与网络/ajax.html" class="prev">
+          ajax
+        </a></span> <span class="next"><a href="/article/Vue学习笔记/axios.html">
+          axios
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><div class="container" data-v-743389c1><canvas id="live2d" width="280" height="250" class="live2d" data-v-743389c1></canvas></div></div></div>
+    <script src="/assets/js/app.0b9391d3.js" defer></script><script src="/assets/js/2.7f3a429d.js" defer></script><script src="/assets/js/25.24a36361.js" defer></script>
+  </body>
+</html>

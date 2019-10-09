@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>跨域问题 | 徐怀宇的blog</title>
+    <meta name="description" content="天道酬勤，日积月累(博客还在手动搬迁中)">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.0d9c2ad8.css" as="style"><link rel="preload" href="/assets/js/app.0b9391d3.js" as="script"><link rel="preload" href="/assets/js/2.7f3a429d.js" as="script"><link rel="preload" href="/assets/js/27.2ddb56f3.js" as="script"><link rel="prefetch" href="/assets/js/10.fdaf1ad8.js"><link rel="prefetch" href="/assets/js/11.576f4e4c.js"><link rel="prefetch" href="/assets/js/12.fcaace63.js"><link rel="prefetch" href="/assets/js/13.d27c8a67.js"><link rel="prefetch" href="/assets/js/14.71b0b488.js"><link rel="prefetch" href="/assets/js/15.aedc0fd7.js"><link rel="prefetch" href="/assets/js/16.045d8ff7.js"><link rel="prefetch" href="/assets/js/17.359a7edd.js"><link rel="prefetch" href="/assets/js/18.d99c00f7.js"><link rel="prefetch" href="/assets/js/19.a225547e.js"><link rel="prefetch" href="/assets/js/20.a8e8a421.js"><link rel="prefetch" href="/assets/js/21.dd5561aa.js"><link rel="prefetch" href="/assets/js/22.98d27e4c.js"><link rel="prefetch" href="/assets/js/23.58001baa.js"><link rel="prefetch" href="/assets/js/24.27201c3e.js"><link rel="prefetch" href="/assets/js/25.24a36361.js"><link rel="prefetch" href="/assets/js/26.29294ee1.js"><link rel="prefetch" href="/assets/js/28.8cb51f2f.js"><link rel="prefetch" href="/assets/js/3.b7359523.js"><link rel="prefetch" href="/assets/js/4.8c95ed9e.js"><link rel="prefetch" href="/assets/js/5.0c41f00d.js"><link rel="prefetch" href="/assets/js/6.3b3dff9c.js"><link rel="prefetch" href="/assets/js/7.eafc6530.js"><link rel="prefetch" href="/assets/js/8.26b147c1.js"><link rel="prefetch" href="/assets/js/9.b10d4f4c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0d9c2ad8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">徐怀宇的blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/article/" class="nav-link router-link-active">文章目录</a></div><div class="nav-item"><a href="/DataStructure/" class="nav-link">数据结构与算法</a></div><div class="nav-item"><a href="https://blog.csdn.net/weixin_42257329" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xupotatoyu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/article/" class="nav-link router-link-active">文章目录</a></div><div class="nav-item"><a href="/DataStructure/" class="nav-link">数据结构与算法</a></div><div class="nav-item"><a href="https://blog.csdn.net/weixin_42257329" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/xupotatoyu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/article/" class="sidebar-link">文章目录</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML-CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>浏览器与网络</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/article/浏览器与网络/TCPIP、HTTP、HTTPS基础知识点.html" class="sidebar-link">TCPIP、HTTP、HTTPS基础知识点</a></li><li><a href="/article/浏览器与网络/网络协议 7层 5层 4层.html" class="sidebar-link">网络协议 7层 5层 4层</a></li><li><a href="/article/浏览器与网络/跨域问题.html" class="active sidebar-link">跨域问题</a></li><li><a href="/article/浏览器与网络/ajax.html" class="sidebar-link">ajax</a></li><li><a href="/article/浏览器与网络/session，cookies和Token.html" class="sidebar-link">session，cookies和Token</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue学习笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端工程化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端优化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS组件库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>后端</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>浏览器同源策略</p> <p>含义： 两个页面地址中的协议，域名，端口号保持一致，则表示同源</p> <p>意义： 浏览器同源策略是浏览器的一个安全功能
+分类：</p> <p>（1）DOM同源策略：禁止对不同源页面的DOM进行操作。主要是Iframe跨域的情况，不同域名的iframe是限制互相访问的。
+（2）XMLHttpRequest同源策略：禁止使用XHR对象向不同源的服务器地址发起HTTP请求。
+来自一个源的js只能读写自己源的存储不能读写其他源的存储
+存储包括，Cookies，Session Storage，Local Storage，Cache，Indexed DB等
+来自一个源的js只能读取自己源的dom树不能读取其他源的dom树。如iframe内外层不同源就不能相互操作
+一般而言来自一个源的js只能向自己源的接口发送请求不能向其他源的接口发送请求。
+跨域问题解决办法</p> <p>一，CORS</p> <p>CORS（Cross-origin resource sharing，跨域资源共享）
+含义：使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应式应该成功还是失败。只要服务器实现了CORS接口，就可以跨域通信。</p> <p>CORS请求分类：简单请求和非简单请求</p> <p>简单请求</p> <p>请求方法是以下三种
+HEAD
+GET
+POST
+HTTP的头部信息不超出以下几种字段
+Accept
+Accept-Language
+Content-Language
+Last-Event-ID
+Content-type: 只限于三个值 application/x-www-form-urlencoded、multipart/form-data、text/plain
+凡是不同时满足上面两个条件，就属于非简单请求。</p> <p>处理流程</p> <p>在请求中需要附加一个额外的 Origin 头部，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部信息来决定是否给予响应。例如：Origin:http://www.asdfg.cn
+如果服务器认为这个请求可以接受，就在Access-Control-Allow-Origin中发回相同的源信息(如果是公共资源，可以回发 * )。例如：Access-Control-Allow-Origin：http://www.asdfg.cn
+没有这个头部或者有这个头部但源信息不匹配，浏览器就会驳回请求。正常情况下，浏览器会处理请求。注意，请求和响应都不包含 cookie 信息。
+如果需要包含 cookie 信息，ajax 请求需要设置 xhr 的属性 withCredentials 为 true，服务器需要设置响应头部 Access-Control-Allow-Credentials: true
+非简单请求</p> <p>浏览器在发送真正的请求之前，会先发送一个 Preflight 请求给服务器，这种请求使用 OPTIONS 方法，发送下列头部：</p> <p>Origin：与简单的请求相同。
+Access-Control-Request-Method: 请求自身使用的方法。
+Access-Control-Request-Headers: （可选）自定义的头部信息，多个头部以逗号分隔。
+Origin: http://www.asdfg.cn
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: NCZ
+发送这个请求后，服务器可以决定是否允许这种类型的请求。服务器通过在响应中发送如下头部与浏览器进行沟通：</p> <p>Access-Control-Allow-Origin：与简单的请求相同。
+Access-Control-Allow-Methods: 允许的方法，多个方法以逗号分隔。
+Access-Control-Allow-Headers: 允许的头部，多个方法以逗号分隔。
+Access-Control-Max-Age: 应该将这个 Preflight 请求缓存多长时间（以秒表示）。
+Access-Control-Allow-Origin: http://www.asdfg.cn
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: NCZ
+Access-Control-Max-Age: 1728000
+一旦服务器通过 Preflight 请求允许该请求之后，以后每次浏览器正常的 CORS 请求，就都跟简单请求一样了。</p> <p>二，JSONP 跨域</p> <p>由于script标签不受浏览器同源策略的影响，允许跨域引用资源。因此可以通过动态创建script标签，然后利用 src 属性进行跨域，这也就是 JSONP 跨域的基本原理。</p> <p>// 1. 定义一个 回调函数 handleResponse 用来接收返回的数据
+function handleResponse(data) {
+console.log(data);
+};</p> <p>// 2. 动态创建一个 script 标签，并且告诉后端回调函数名叫 handleResponse
+var body = document.getElementsByTagName('body')[0];
+var script = document.gerElement('script');
+script.src = 'http://www.laixiangran.cn/json?callback=handleResponse';
+body.appendChild(script);</p> <p>// 3. 通过 script.src 请求 <code>http://www.laixiangran.cn/json?callback=handleResponse</code>，
+// 4. 后端能够识别这样的 URL 格式并处理该请求，然后返回 handleResponse({&quot;name&quot;: &quot;laixiangran&quot;}) 给浏览器
+// 5. 浏览器在接收到 handleResponse({&quot;name&quot;: &quot;laixiangran&quot;}) 之后立即执行 ，也就是执行 handleResponse 方法，获得后端返回的数据，这样就完成一次跨域请求了。
+优点：使用简便，没有兼容性问题，目前最流行的一种跨域方法。</p> <p>缺点：</p> <p>只支持 GET 请求。
+由于是从其它域中加载代码执行，因此如果其他域不安全，很可能会在响应中夹带一些恶意代码。
+要确定 JSONP 请求是否失败并不容易。虽然 HTML5 给 script 标签新增了一个 onerror 事件处理程序，但是存在兼容性问题。
+三，服务器代理。如nginx</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/18/2019, 12:15:27 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/article/浏览器与网络/网络协议 7层 5层 4层.html" class="prev">
+          网络协议 7层 5层 4层
+        </a></span> <span class="next"><a href="/article/浏览器与网络/ajax.html">
+          ajax
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"><div class="container" data-v-743389c1><canvas id="live2d" width="280" height="250" class="live2d" data-v-743389c1></canvas></div></div></div>
+    <script src="/assets/js/app.0b9391d3.js" defer></script><script src="/assets/js/2.7f3a429d.js" defer></script><script src="/assets/js/27.2ddb56f3.js" defer></script>
+  </body>
+</html>
